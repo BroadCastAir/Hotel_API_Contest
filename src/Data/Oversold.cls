@@ -3,19 +3,19 @@ Class Data.Oversold Extends %Library.Persistent [ Not Abstract, DdlAllowed, Not 
 
 Property bookingdate As %Library.String [ SqlColumnNumber = 2, SqlFieldName = booking_date ];
 
-Property roomprice As %Library.Currency [ SqlColumnNumber = 3, SqlFieldName = room_price ];
+Property roomprice As %Library.String [ SqlColumnNumber = 3, SqlFieldName = room_price ];
 
 Property roommax As %Library.Integer(MAXVAL = 2147483647, MINVAL = -2147483648) [ SqlColumnNumber = 4, SqlFieldName = room_max ];
 
 Property unshowfore As %Library.Integer(MAXVAL = 2147483647, MINVAL = -2147483648) [ SqlColumnNumber = 5, SqlFieldName = unshow_fore ];
 
-Property resultMax As %Library.Currency [ SqlColumnNumber = 6 ];
+Property resultMax As %Library.String [ SqlColumnNumber = 6 ];
 
 Property resultMaxsold As %Library.Integer(MAXVAL = 2147483647, MINVAL = -2147483648) [ SqlColumnNumber = 7, SqlFieldName = resultMax_sold ];
 
-Property arrivalrate As %Library.Currency [ SqlColumnNumber = 8, SqlFieldName = arrival_rate ];
+Property arrivalrate As %Library.String [ SqlColumnNumber = 8, SqlFieldName = arrival_rate ];
 
-Property arrivalratefore As %Library.Currency [ SqlColumnNumber = 9, SqlFieldName = arrival_rate_fore ];
+Property arrivalratefore As %Library.String [ SqlColumnNumber = 9, SqlFieldName = arrival_rate_fore ];
 
 ClassMethod Import(pSelectMode As %Library.Integer = {$zu(115,5)}, pFileName As %Library.String(MAXLEN=""), pDelimiter As %String = ",", pQuote As %String = """", pHeaders As %Integer = 0, ByRef pRecordCount As %Integer) As %Library.Integer [ SqlProc ]
 {
