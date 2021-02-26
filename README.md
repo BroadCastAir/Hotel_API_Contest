@@ -1,24 +1,22 @@
-## intersystems-iris-docker-rest-template
-This is a template of a REST API application built with ObjectScript in InterSystems IRIS.
+## intersystems-iris-docker-rest-data-api-for-hotel-Overbooking
+
+This is a demo of a REST API application built with ObjectScript in InterSystems IRIS.
 It also has OPEN API spec, 
 can be developed with Docker and VSCode,
-can ve deployed as ZPM module.
+can be deployed as ZPM module.
+can be used as Overbooking System data REST api.
 
 ## Prerequisites
+
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
-
-## Installation with ZPM
-
-zpm:USER>install rest-api-template
+Make sure you have a Java environment. JDK 1.8.0 is recommended.
 
 ## Installation for development
-
-Create your repository from template.
 
 Clone/git pull the repo into any local directory e.g. like it is shown below (here I show all the examples related to this repository, but I assume you have your own derived from the template):
 
 ```
-$ git clone git@github.com:intersystems-community/objectscript-rest-docker-template.git
+$ git clone git@github.com:BroadCastAir/hotel_api.git
 ```
 
 Open the terminal in this directory and run:
@@ -27,26 +25,26 @@ Open the terminal in this directory and run:
 $ docker-compose up -d --build
 ```
 
-or open the folder in VSCode and do the following:
-![rest](https://user-images.githubusercontent.com/2781759/78183327-63569800-7470-11ea-8561-c3b547ce9001.gif)
+## Hotel-Booking Management System
+
+By analyzing the hotel operation flow data, we first calculate and summarize the trend of price with lead_time by dividing the lead_time distribution of the price range, then by considering the hotel's room inventory for each room pricing analysis, and finally to view the booking of a specific date (choose a more scheduled 10 days).
+
+
+## Use REST Data API for Hotel-Booking System
+
+We write the relevant analysis and calculation results to the InterSystems IRIS, and then set up the data API interface through the Iris Data platform, which makes it easy for the Hotel Overbooking System to use the data API service directly. A more flexible and decoupled system architecture is built by separating the relevant system side from the data analysis side.
 
 
 ## How to Work With it
 
-This template creates /crud REST web-application on IRIS which implements 4 types of communication: GET, POST, PUT and DELETE aka CRUD operations.
-These interface works with a sample persistent class Sample.Person.
+This Hotel Data API creates REST web-application on IRIS which implements 4 types of communication: GET, POST, PUT and DELETE aka CRUD operations.
+These interface works with many table classes such as: Sample.Orders/Sample.Hotel/Sample.Oversold/Sample.PriceTrend/Sample.NoshowFore etc...
 
 Open http://localhost:52773/swagger-ui/index.html to test the REST API
 
 # Testing GET requests
 
-To test GET you need to have some data. You can create it with POST request (see below), or you can create some fake testing data. to do that open IRIS terminal or web terminal on /localhost:52773/terminal/  and call:
-
-```
-USER>do ##class(Sample.Person).AddTestData(10)
-```
-This will create 10 random records in Sample.Person class.
-
+To test GET you need to have some data. You can create it with POST request (see below), or you can create some fake testing data. to do that open IRIS terminal or web terminal on /localhost:52773/terminal/.
 
 You can get swagger Open API 2.0 documentation on:
 ```
@@ -57,56 +55,21 @@ This REST API exposes two GET requests: all the data and one record.
 To get all the data in JSON call:
 
 ```
-localhost:52773/crud/persons/all
+localhost:52773/hotel/all
 ```
 
-To request the data for a particular record provide the id in GET request like 'localhost:52773/crud/persons/id' . E.g.:
+To request the data for a particular record provide the id in GET request like 'localhost:52773/hotel/id' . E.g.:
 
 ```
-localhost:52773/crud/persons/1
+localhost:52773/hotel/1
 ```
 
 This will return JSON data for the person with ID=1, something like that:
 
 ```
-{"Name":"Elon Mask","Title":"CEO","Company":"Tesla","Phone":"123-123-1233","DOB":"1982-01-19"}
+{"ID":"62","booking_date":"2015/5/1","room_price":122.9352,"room_max":146,"unshow_fore":9,"resultMax":17714.2491,"resultMax_sold":156,"arrival_rate":0.9658,"arrival_rate_fore":0.9408}
 ```
 
-# Testing POST request
-
-Create a POST request e.g. in Postman with raw data in JSON. e.g.
-
-```
-{"Name":"Elon Mask","Title":"CEO","Company":"Tesla","Phone":"123-123-1233","DOB":"1982-01-19"}
-```
-
-Adjust the authorisation if needed - it is basic for container with default login and password for IRIR Community edition container
-
-and send the POST request to localhost:52773/crud/persons/
-
-This will create a record in Sample.Person class of IRIS.
-
-# Testing PUT request
-
-PUT request could be used to update the records. This needs to send the similar JSON as in POST request above supplying the id of the updated record in URL.
-E.g. we want to change the record with id=5. Prepare in Postman the JSON in raw like following:
-
-```
-{"Name":"Jeff Besos","Title":"CEO","Company":"Amazon","Phone":"123-123-1233","DOB":"1982-01-19"}
-```
-
-and send the put request to:
-```
-localhost:52773/crud/persons/5
-```
-
-# Testing DELETE request
-
-For delete request this REST API expects only the id of the record to delete. E.g. if the id=5 the following DELETE call will delete the record:
-
-```
-localhost:52773/crud/persons/5
-```
 
 ## How to start coding
 This repository is ready to code in VSCode with ObjectScript plugin.
