@@ -27,12 +27,14 @@ $ docker-compose up -d --build
 
 ## Install SpringBoot For Hotel Over-Booking Management System
 
-InterSystems IRIS Data Platform provide RESTful API for Hotel OverBooking Management System.
-InterSystems IRIS makes it easier to build high-performance applications that connect data and application silos.
-For more details about the Hotel OverBooking Management System, see in:
-https://github.com/BroadCastAir/Hotel_OverBooking_Sys
-# 
+- InterSystems IRIS Data Platform provide RESTful API for Hotel OverBooking Management System.
+- InterSystems IRIS makes it easier to build high-performance applications that connect data and application silos.
+- For more details about the Hotel OverBooking Management System, 
+see in: https://github.com/BroadCastAir/Hotel_OverBooking_Sys
 
+## Building RESTful Web Services in InterSystems IRIS
+
+Using Atelier, load the REST.Example.cls file to the USER namespace. Compile REST.Example. Create the CSP application /rest/example for the USER namespace. Set the Dispatch Class option for /rest/example to REST.Example.
 ## Hotel Over-Booking Management System
 
 By analyzing the hotel operation flow data, we first calculate and summarize the trend of price with lead_time by dividing the lead_time distribution of the price range, then by considering the hotel's room inventory for each room pricing analysis, and finally to view the booking of a specific date (choose a more scheduled 10 days).
