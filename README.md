@@ -64,7 +64,7 @@ To request the data for a particular record provide the id in GET request like '
 localhost:52773/hotel/1
 ```
 
-This will return JSON data for the person with ID=1, something like that:
+This will return JSON data for the hotel with ID=1, something like that:
 
 ```
 {"ID":"62","booking_date":"2015/5/1","room_price":122.9352,"room_max":146,"unshow_fore":9,"resultMax":17714.2491,"resultMax_sold":156,"arrival_rate":0.9658,"arrival_rate_fore":0.9408}
