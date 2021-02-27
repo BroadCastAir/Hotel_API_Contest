@@ -72,26 +72,22 @@ public class interSysServiceImpl implements interSysService {
 
     private final Logger log = LoggerFactory.getLogger(this.getClass());
 
-
     @Override
     public List getOverSoldList() {
 
         String URL ="http://127.0.0.1:52773/oversold/all";
-
         List overSoldlist = new ArrayList();
 
         //1.get httpclient
         CloseableHttpClient httpclient = HttpClients.custom().setConnectionManager(HttpConnectionManagerApi.getPoolingHttpClientConnectionManager()).setConnectionManagerShared(true).build();
+
         //2.generate get method
         HttpGet httpGet = new HttpGet(URL);
-
         httpGet.addHeader("Authorization","Basic X1NZU1RFTTpTWVM=");
-
         String resultJson = null;
-
         List<OneBox> overSoldList = new ArrayList<>();
-
         overSoldlist = getDockResultList(overSoldlist, httpclient, httpGet);
+        
         return overSoldlist;
     }
 }
