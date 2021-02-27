@@ -8,12 +8,14 @@ can be used as Overbooking System data REST api.
 
 ## What's Hotel Overbooking Management System?
 
-The overbooking management system combines the unique conditions of the hotel, such as room prices, order channels, customer needs (etc...), System uses machine learning algorithms (such as: KNN/ES-RNN...) to accurately predict the daily no-show and occupancy rate of the hotel, and further combines with the revenue equation to find the best largest room Sales volume, which can significantly increase the hotel revenue. This system can not only formulate short-term hotel oversale plans, but also applies to the formulation of medium-term or long-term hotel oversell plans.
+The overbooking management system combines the unique conditions of the hotel, such as room prices, order channels, customer needs (etc...), System uses machine learning algorithms (such as: KNN/ES-RNN...) to accurately predict the daily no-show and occupancy rate of the hotel, and further combines with the revenue equation to find the best largest room Sales volume, which can significantly increase the hotel revenue.
+
 
 ## Prerequisites
 
 Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.  
-Make sure you have a Java environment. JDK 1.8.0 is recommended.
+Make sure you have a Java environment.  
+JDK 1.8.0 is recommended.
 
 ## Installation for InterSystems IRIS Data Platform Development
 
@@ -50,8 +52,16 @@ The Web Service built on InterSystems IRIS provides API services for the Hotel O
 
 ## Hotel Over-Booking Management System
 
-By analyzing the hotel operation flow data, we first calculate and summarize the trend of price with lead_time by dividing the lead_time distribution of the price range, then by considering the hotel's room inventory for each room pricing analysis, and finally to view the booking of a specific date (choose a more scheduled 10 days).
+By analyzing the hotel operation flow data, we first calculate and summarize the trend of price with lead_time by dividing the lead_time distribution of the price range, then by considering the hotel's room inventory for each room pricing analysis, and finally to view the booking of a specific date (choose a more scheduled 10 days).  
 
+This system can not only formulate short-term hotel oversale plans, but also applies to the formulation of medium-term or long-term hotel oversell plans.
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/total_intr01.png)
+
+The Hotel Over-Booking Management System can also provide more detailed content:
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/total_intr02.png)
+
+
+In addition, the Over-Booking System also provides specific topic analysis functions, as shown below:
 - Analysis of No-show customers
     - This topic shows the situation of no-show in the previous 12 months and the loss of profits. The number of no-show customers differs between month and week
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/analysis_of_noshow.png)
