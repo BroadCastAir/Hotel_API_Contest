@@ -6,9 +6,13 @@ can be developed with Docker and VSCode,
 can be deployed as ZPM module.
 can be used as Overbooking System data REST api.
 
+## What's Hotel Overbooking Management System?
+
+The overbooking management system combines the unique conditions of the hotel, such as room prices, order channels, customer needs (etc...), System uses machine learning algorithms (such as: KNN/ES-RNN...) to accurately predict the daily no-show and occupancy rate of the hotel, and further combines with the revenue equation to find the best largest room Sales volume, which can significantly increase the hotel revenue. This system can not only formulate short-term hotel oversale plans, but also applies to the formulation of medium-term or long-term hotel oversell plans.
+
 ## Prerequisites
 
-Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.
+Make sure you have [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) and [Docker desktop](https://www.docker.com/products/docker-desktop) installed.  
 Make sure you have a Java environment. JDK 1.8.0 is recommended.
 
 ## Installation for InterSystems IRIS Data Platform Development
@@ -24,7 +28,7 @@ Open the terminal in this directory and run:
 ```
 $ docker-compose up -d --build
 ```
-
+  
 After the installation is complete, InterSystem Iris as shown below:
 
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/iris_platform.png)
@@ -47,15 +51,18 @@ The Web Service built on InterSystems IRIS provides API services for the Hotel O
 
 By analyzing the hotel operation flow data, we first calculate and summarize the trend of price with lead_time by dividing the lead_time distribution of the price range, then by considering the hotel's room inventory for each room pricing analysis, and finally to view the booking of a specific date (choose a more scheduled 10 days).
 
-- dashboard01
+- Analysis of No-show
+    - This topic shows the situation of no-show in the previous 12 months and the loss of profits. The number of no-show customers differs between month and week
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_1.png)
 
 
-- dashboard02
+- Analysis of No-show customer profile
+   - This topic shows the customer group analysis of no-show customers, no-show customers will be different due to differences in customer group category, number of days of stay, country of origin, booking channel, market segment and so on.
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_2.png)
 
 
-- dashboard03
+- Trend and Forecast
+    - This topic shows the trends of room prices and occupancy in the past two months and the no-show customers in the next two months.
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_3.png)
 
 
@@ -87,7 +94,7 @@ public class interSysServiceImpl implements interSysService {
         String resultJson = null;
         List<OneBox> overSoldList = new ArrayList<>();
         overSoldlist = getDockResultList(overSoldlist, httpclient, httpGet);
-        
+
         return overSoldlist;
     }
 }
