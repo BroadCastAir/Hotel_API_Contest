@@ -59,7 +59,8 @@ By analyzing the hotel operation flow data, we first calculate and summarize the
 
 - Analysis of No-show customer profile
    - This topic shows the customer group analysis of no-show customers, no-show customers will be different due to differences in customer group category, number of days of stay, country of origin, booking channel, market segment and so on.
-![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/noshow_profile01.png)  
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/noshow_profile01.png)
+&
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/noshow_profile02.png)
 
 
