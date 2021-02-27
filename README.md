@@ -26,7 +26,8 @@ $ docker-compose up -d --build
 ```
 
 After the installation is complete, InterSystem Iris as shown below:
-![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/api_web_service.png)
+
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/iris_platform.png)
 ## Install SpringBoot For Hotel Over-Booking Management System
 
 - InterSystems IRIS Data Platform provide RESTful API for Hotel OverBooking Management System.
@@ -37,14 +38,64 @@ see in: https://github.com/BroadCastAir/Hotel_OverBooking_Sys
 ## Building RESTful Web Services in InterSystems IRIS
 
 Using Atelier, load the REST.Example.cls file to the USER namespace. Compile REST.Example. Create the CSP application /rest/example for the USER namespace. Set the Dispatch Class option for /rest/example to REST.Example.
+
+The Web Service built on InterSystems IRIS provides API services for the Hotel Overbooking system. For details, see below:
+
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/api_web_service.png)
+
 ## Hotel Over-Booking Management System
 
 By analyzing the hotel operation flow data, we first calculate and summarize the trend of price with lead_time by dividing the lead_time distribution of the price range, then by considering the hotel's room inventory for each room pricing analysis, and finally to view the booking of a specific date (choose a more scheduled 10 days).
+
+- dashboard01
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_1.png)
+
+
+- dashboard02
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_2.png)
+
+
+- dashboard03
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_3.png)
+
 
 
 ## Use REST Data API for Hotel-Booking System
 
 We write the relevant analysis and calculation results to the InterSystems IRIS, and then set up the data API interface through the Iris Data platform, which makes it easy for the Hotel Overbooking System to use the data API service directly. A more flexible and decoupled system architecture is built by separating the relevant system side from the data analysis side.
+
+The example as below： 
+
+```
+@Service("interSysService")
+public class interSysServiceImpl implements interSysService {
+
+    private final Logger log = LoggerFactory.getLogger(this.getClass());
+
+
+    @Override
+    public List getOverSoldList() {
+
+        String URL ="http://127.0.0.1:52773/oversold/all";
+
+        List overSoldlist = new ArrayList();
+
+        //1.get httpclient
+        CloseableHttpClient httpclient = HttpClients.custom().setConnectionManager(HttpConnectionManagerApi.getPoolingHttpClientConnectionManager()).setConnectionManagerShared(true).build();
+        //2.generate get method
+        HttpGet httpGet = new HttpGet(URL);
+
+        httpGet.addHeader("Authorization","Basic X1NZU1RFTTpTWVM=");
+
+        String resultJson = null;
+
+        List<OneBox> overSoldList = new ArrayList<>();
+
+        overSoldlist = getDockResultList(overSoldlist, httpclient, httpGet);
+        return overSoldlist;
+    }
+}
+```
 
 
 ## How to Work With it
