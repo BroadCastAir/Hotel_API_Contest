@@ -25,6 +25,8 @@ Open the terminal in this directory and run:
 $ docker-compose up -d --build
 ```
 
+After the installation is complete, InterSystem Iris as shown below:
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/api_web_service.png)
 ## Install SpringBoot For Hotel Over-Booking Management System
 
 - InterSystems IRIS Data Platform provide RESTful API for Hotel OverBooking Management System.
