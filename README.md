@@ -56,7 +56,7 @@ By analyzing the hotel operation flow data, we first calculate and summarize the
 
 This system can not only formulate short-term hotel oversale plans, but also applies to the formulation of medium-term or long-term hotel oversell plans.
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/total_intr01.png)
-
+  
 The Hotel Over-Booking Management System can also provide more detailed content:
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/total_intr02.png)
 
