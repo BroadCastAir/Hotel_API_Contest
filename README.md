@@ -37,7 +37,8 @@ After the installation is complete, InterSystem Iris as shown below:
 - InterSystems IRIS Data Platform provide RESTful API for Hotel OverBooking Management System.
 - InterSystems IRIS makes it easier to build high-performance applications that connect data and application silos.
 - For more details about the Hotel OverBooking Management System, 
-see in: https://github.com/BroadCastAir/Hotel_OverBooking_Sys
+see in:  
+https://github.com/BroadCastAir/Hotel_OverBooking_Sys
 
 ## Building RESTful Web Services in InterSystems IRIS
 
@@ -51,20 +52,20 @@ The Web Service built on InterSystems IRIS provides API services for the Hotel O
 
 By analyzing the hotel operation flow data, we first calculate and summarize the trend of price with lead_time by dividing the lead_time distribution of the price range, then by considering the hotel's room inventory for each room pricing analysis, and finally to view the booking of a specific date (choose a more scheduled 10 days).
 
-- Analysis of No-show
+- Analysis of No-show customers
     - This topic shows the situation of no-show in the previous 12 months and the loss of profits. The number of no-show customers differs between month and week
-![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_1.png)
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/analysis_of_noshow.png)
 
 
 - Analysis of No-show customer profile
    - This topic shows the customer group analysis of no-show customers, no-show customers will be different due to differences in customer group category, number of days of stay, country of origin, booking channel, market segment and so on.
-![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_2.png)
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/noshow_profile01.png)  
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/noshow_profile02.png)
 
 
 - Trend and Forecast
     - This topic shows the trends of room prices and occupancy in the past two months and the no-show customers in the next two months.
-![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/overbooking_sys_3.png)
-
+![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/trend_and_forcast.png)
 
 
 ## Use REST Data API for Hotel-Booking System
