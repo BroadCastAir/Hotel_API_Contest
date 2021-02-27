@@ -73,7 +73,7 @@ We write the relevant analysis and calculation results to the InterSystems IRIS,
 
 The example as below： 
 
-```
+```java
 @Service("interSysService")
 public class interSysServiceImpl implements interSysService {
 
@@ -81,7 +81,6 @@ public class interSysServiceImpl implements interSysService {
 
     @Override
     public List getOverSoldList() {
-
         String URL ="http://127.0.0.1:52773/oversold/all";
         List overSoldlist = new ArrayList();
 
