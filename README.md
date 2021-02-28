@@ -61,20 +61,20 @@ Hotel managers can use the preditions as reference when booking rooms to improve
 
 
 In addition, the Over-Booking System also provides specific topic analysis functions, as shown below:
-- Analysis of No-show customers
-    - This topic shows the situation of no-show in the previous 12 months and the loss of profits. The number of no-show customers has differences between month dimension and week dimension.
+- Analysis of No-show customers
+    - This topic shows the situation of no-show in the previous 12 months and the loss of profits. The number of no-show customers has differences between month dimension and week dimension.
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/analysis_of_noshow.png)
 
 
-- Analysis of No-show customer profile
-   - This topic shows the customer group analysis of no-show customers. No-show customers will be different due to diverse features in different customer groups, including number of days of stay, nationality, booking channel, market segment and so on.
+- Analysis of No-show customer profile
+    - This topic shows the customer group analysis of no-show customers. No-show customers will be different due to diverse features in different customer groups, including number of days of stay, nationality, booking channel, market segment and so on.
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/noshow_profile01.png)
 &
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/noshow_profile02.png)
 
 
-- Trend and Forecast
-    - This topic shows the trends of room prices and occupancy in the past two months and the no-show customers predictions in the next two months.
+- Trend and Forecast
+    - This topic shows the trends of room prices and occupancy in the past two months and the no-show customers predictions in the next two months.
 ![image](https://github.com/BroadCastAir/Hotel_API_Contest/blob/master/png/trend_and_forcast.png)
 
 
